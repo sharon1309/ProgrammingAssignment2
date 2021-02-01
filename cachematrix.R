@@ -1,7 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## setting to Cache so that the function is stored
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
@@ -9,17 +9,17 @@ makeCacheMatrix <- function(x = matrix()) {
     x<<- y
     inv <<- NULL
   }
+  ## retrieving the function and setting for inverse
   get <- function () x
+  
   setInverse <- function () inv <<- solve (x)
   getInverse <- function () inv
-  list(set = set,
-       get = get,
-       setInverse = setInverse,
-       getInverse = getInverse)
+  list(set = set, get = get,
+       setInverse = setInverse, getInverse = getInverse)
 }
 
 
-## Write a short comment describing this function
+## Solve matrix if not cached
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
